@@ -10,8 +10,8 @@ import { catchError } from 'rxjs/operators';
 export class InvoiceTemplateService {
 
   constructor(private http: HttpClient) { }
-  
-  private apiUrl = 'https://localhost:7184'; 
+  private apiUrlDev = 'https://localhost:7184'; 
+  private apiUrl = 'http://localhost:5000'; 
 
   getInvoiceTemplates(): Observable<InvoiceTemplate[]> {
     return this.http.get<InvoiceTemplate[]>(`${this.apiUrl}/api/invoicetemplates`);

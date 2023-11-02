@@ -10,7 +10,9 @@ export class InvoiceService {
 
   constructor(private http: HttpClient) { }
   showInvoicePrompts = false;
-  private apiUrl = 'https://localhost:7184'; 
+  private apiUrlDev = 'https://localhost:7184'; 
+  private apiUrl = 'http://localhost:5000'; 
+
   createInvoice(invoice: Invoice): Observable<Invoice> {
     return this.http.post<Invoice>(`${this.apiUrl}/api/invoices`, invoice);
   }
