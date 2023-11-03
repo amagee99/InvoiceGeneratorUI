@@ -11,8 +11,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/InvoiceGeneratorUI/",
             "outputPath": "dist/invoice-generator-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
