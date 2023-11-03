@@ -11,8 +11,8 @@ export class InvoiceTemplateService {
 
   constructor(private http: HttpClient) { }
   private apiUrlDev = 'https://localhost:7184'; 
-  private apiUrl = 'http://localhost:5000'; 
-  //private apiUrl = "https://invoicegeneratorapi.azurewebsites.net"; 
+  private apiBuildUrl = 'http://localhost:5000'; 
+  private apiUrl = "https://invoicegeneratorapi.azurewebsites.net"; 
   getInvoiceTemplates(): Observable<InvoiceTemplate[]> {
     return this.http.get<InvoiceTemplate[]>(`${this.apiUrl}/api/invoicetemplates`);
   }
