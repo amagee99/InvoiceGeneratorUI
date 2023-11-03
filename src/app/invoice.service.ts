@@ -16,11 +16,7 @@ export class InvoiceService {
   createInvoice(invoice: Invoice): Observable<Invoice> {
     return this.http.post<Invoice>(`${this.apiUrl}/api/invoices`, invoice);
   }
-  /*fillInTemplateWithInvoice(invoiceId: number, invoiceTemplateId: number){
-    const data = { invoiceId, invoiceTemplateId };
-    return this.http.post(`${this.apiUrl}/api/excel/generateinvoicepdf`, data);
-    //return this.http.post(`${this.apiUrl}/api/excel?invoiceId=123&invoiceTemplateId=456');
-  }*/
+
   fillInTemplateWithInvoice(invoiceId: number, invoiceTemplateId: number): Observable<InvoiceGeneration> {
     let invoiceGeneration: InvoiceGeneration = {
       invoiceId: invoiceId,
